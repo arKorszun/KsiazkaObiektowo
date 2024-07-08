@@ -87,7 +87,6 @@ void UzytkownikMenager::logowanieUzytkownika()
                 {
                     cout << endl << "Zalogowales sie." << endl << endl;
                     this->idZalogowanegoUzytkownika = uzytkownicy[i].pobierzId();
-                    cout << "Id zalogowanego uzytkownika: " << pobierzIdZalogowanegoUzytkownika() << endl;
                     system("pause");
                     return;
                 }
@@ -106,9 +105,21 @@ int UzytkownikMenager::pobierzIdZalogowanegoUzytkownika()
     return idZalogowanegoUzytkownika;
 }
 
+bool UzytkownikMenager::czyUzytkownikJestZalogowany()
+{
+    if (idZalogowanegoUzytkownika != 0)
+    {
+        return true;
+    }
+    return false;
+}
+
 void UzytkownikMenager::wylogujUzytkownika()
 {
-    idZalogowanegoUzytkownika = 0;
+    if (czyUzytkownikJestZalogowany())
+    {
+       idZalogowanegoUzytkownika = 0;
+    }
 }
 
 void UzytkownikMenager::zmianaHaslaZalogowanegoUzytkownika()

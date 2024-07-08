@@ -16,6 +16,8 @@ int main()
     ksiazkaAdresowa.logowanieUzytkownika();
     ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
     ksiazkaAdresowa.wypiszWszystkichUzytkownikow();
+    ksiazkaAdresowa.wylogujUzytkownika();
+    ksiazkaAdresowa.rejestracjaUzytkownika();
 
     return 0;
 }
