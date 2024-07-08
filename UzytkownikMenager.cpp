@@ -110,3 +110,21 @@ void UzytkownikMenager::wylogujUzytkownika()
 {
     idZalogowanegoUzytkownika = 0;
 }
+
+void UzytkownikMenager::zmianaHaslaZalogowanegoUzytkownika()
+{
+    string noweHaslo = "";
+    cout << "Podaj nowe haslo: ";
+    noweHaslo = MetodyPomocnicze::wczytajLinie();
+
+    for (size_t i = 0; i < uzytkownicy.size(); i++ )
+    {
+        if (uzytkownicy[i].pobierzId() == idZalogowanegoUzytkownika)
+        {
+            uzytkownicy[i].ustawHaslo(noweHaslo);
+            cout << "Haslo zostalo zmienione." << endl << endl;
+            system("pause");
+        }
+    }
+    plikZUzytkownikami.zapiszWszystkichUzytkownikowDoPliku(uzytkownicy);
+}
