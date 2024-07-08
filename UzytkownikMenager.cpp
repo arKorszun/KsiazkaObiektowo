@@ -65,3 +65,48 @@ void UzytkownikMenager::wczytajUzytkownikowZPliku()
 {
     uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
 }
+
+void UzytkownikMenager::logowanieUzytkownika()
+{
+    Uzytkownik uzytkownik;
+    string login = "", haslo = "";
+    idZalogowanegoUzytkownika = 0;
+    cout << endl << "Podaj login: ";
+    login = MetodyPomocnicze::wczytajLinie();
+
+    for (size_t i = 0; i < uzytkownicy.size(); i++ )
+    {
+        if (uzytkownicy[i].pobierzLogin() == login)
+        {
+            for (int iloscProb = 3; iloscProb > 0; iloscProb--)
+            {
+                cout << "Podaj haslo. Pozostalo prob: " << iloscProb << ": ";
+                haslo = MetodyPomocnicze::wczytajLinie();
+
+                if (uzytkownicy[i].pobierzHaslo() == haslo)
+                {
+                    cout << endl << "Zalogowales sie." << endl << endl;
+                    this->idZalogowanegoUzytkownika = uzytkownicy[i].pobierzId();
+                    cout << "Id zalogowanego uzytkownika: " << pobierzIdZalogowanegoUzytkownika() << endl;
+                    system("pause");
+                    return;
+                }
+            }
+            cout << "Wprowadzono 3 razy bledne haslo." << endl;
+            system("pause");
+            return;
+        }
+    }
+    cout << "Nie ma uzytkownika z takim loginem" << endl << endl;
+    system("pause");
+    return;
+}
+int UzytkownikMenager::pobierzIdZalogowanegoUzytkownika()
+{
+    return idZalogowanegoUzytkownika;
+}
+
+void UzytkownikMenager::wylogujUzytkownika()
+{
+    idZalogowanegoUzytkownika = 0;
+}
