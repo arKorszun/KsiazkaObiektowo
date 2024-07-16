@@ -6,6 +6,7 @@
 #include <fstream>
 #include <sstream>
 #include <algorithm>
+#include <windows.h>
 #include "Adresat.h"
 #include "PlikZAdresatami.h"
 
@@ -32,6 +33,9 @@ public:
     int pobierzIdZalogowanegoUzytkownika();
     void wyswietlWszystkichAdresatow();
     void wyswietlDaneAdresata(Adresat adresat);
+    void wyczyscWektorAdresaci();
+
+
 
 };
 

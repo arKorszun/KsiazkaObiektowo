@@ -2,6 +2,7 @@
 
 void AdresatMenager::wczytajAdresatowZPliku()
 {
+    adresaci.clear();
     adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);
     idOstatniegoAdresata = plikZAdresatami.pobierzIdOstatniegoAdresata();
 }
@@ -96,4 +97,9 @@ void AdresatMenager::wyswietlDaneAdresata(Adresat adresat)
     cout << "Adres:              " << adresat.pobierzAdres() << endl;
 }
 
+void AdresatMenager::wyczyscWektorAdresaci()
+{
+    adresaci.clear();
+    plikZAdresatami.wyczyscWektorAdresaci();
+}
 

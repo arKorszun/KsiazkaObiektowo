@@ -153,3 +153,8 @@ bool PlikZAdresatami::czyPlikJestPusty(fstream &plikTekstowy)
     else
         return false;
 }
+
+void PlikZAdresatami::wyczyscWektorAdresaci()
+{
+    adresaci.clear();
+}

@@ -14,6 +14,7 @@ void KsiazkaAdresowa::logowanieUzytkownika()
 {
     uzytkownikMenager.logowanieUzytkownika();
     adresatMenager.ustawIdZalogowanegoUzytkownika(uzytkownikMenager.pobierzIdZalogowanegoUzytkownika());
+    adresatMenager.wczytajAdresatowZPliku();
 }
 
 void KsiazkaAdresowa::zmianaHaslaZalogowanegoUzytkownika()
@@ -24,6 +25,7 @@ void KsiazkaAdresowa::zmianaHaslaZalogowanegoUzytkownika()
 void KsiazkaAdresowa::wylogujUzytkownika()
 {
     uzytkownikMenager.wylogujUzytkownika();
+    adresatMenager.wyczyscWektorAdresaci();
 }
 
 void KsiazkaAdresowa::dodajAdresata()
