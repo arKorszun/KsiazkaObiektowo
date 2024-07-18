@@ -2,6 +2,7 @@
 #define METODYPOMOCNICZE_H
 #include <iostream>
 #include <sstream>
+#include <algorithm>
 #include "Uzytkownik.h"
 
 using namespace std;
@@ -13,6 +14,8 @@ public:
     static string wczytajLinie();
     static string pobierzLiczbe(string tekst, int pozycjaZnaku);
     static int konwersjaStringNaInt(string liczba);
+    static string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
+    static char wczytajZnak();
 
 
 };

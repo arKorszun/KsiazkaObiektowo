@@ -61,10 +61,7 @@ void UzytkownikMenager::wypiszWszystkichUzytkownikow()
     }
 }
 
-void UzytkownikMenager::wczytajUzytkownikowZPliku()
-{
-    uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
-}
+
 
 void UzytkownikMenager::logowanieUzytkownika()
 {
@@ -107,11 +104,10 @@ int UzytkownikMenager::pobierzIdZalogowanegoUzytkownika()
 
 bool UzytkownikMenager::czyUzytkownikJestZalogowany()
 {
-    if (idZalogowanegoUzytkownika != 0)
-    {
+    if (idZalogowanegoUzytkownika > 0)
         return true;
-    }
-    return false;
+    else
+        return false;
 }
 
 void UzytkownikMenager::wylogujUzytkownika()

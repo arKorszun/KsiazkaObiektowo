@@ -21,11 +21,13 @@ class UzytkownikMenager
     bool czyIstniejeLogin(string login);
 
 public:
-    UzytkownikMenager(string nazwaPlikuZUzytkownikami) : plikZUzytkownikami(nazwaPlikuZUzytkownikami){};
+    UzytkownikMenager(string nazwaPlikuZUzytkownikami) : plikZUzytkownikami(nazwaPlikuZUzytkownikami){
+        idZalogowanegoUzytkownika = 0;
+        uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
+    };
     void rejestracjaUzytkownika();
     void logowanieUzytkownika();
     void wypiszWszystkichUzytkownikow();
-    void wczytajUzytkownikowZPliku();
     bool czyUzytkownikJestZalogowany();
     void wylogujUzytkownika();
     int pobierzIdZalogowanegoUzytkownika();
