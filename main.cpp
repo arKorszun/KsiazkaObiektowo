@@ -42,13 +42,13 @@ int main()
                 ksiazkaAdresowa.dodajAdresata();
                 break;
             case '2':
-                //wyszukajAdresatowPoImieniu(adresaci);
+                ksiazkaAdresowa.wyszukajAdresatowPoImieniu();
                 break;
             case '3':
-                //wyszukajAdresatowPoNazwisku(adresaci);
+                //wyszukajAdresatowPoNazwisku();
                 break;
             case '4':
-                ksiazkaAdresowa.wyswietlkWszystkichAdresatow();
+                ksiazkaAdresowa.wyswietlWszystkichAdresatow();
                 break;
             case '5':
                 //idUsunietegoAdresata = usunAdresata(adresaci);
