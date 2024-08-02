@@ -60,6 +60,12 @@ void KsiazkaAdresowa::wyswietlWszystkichAdresatow()
 void KsiazkaAdresowa::wyszukajAdresatowPoImieniu()
 {
     adresatMenager->wyszukajAdresatowPoImieniu();
+
+}
+
+void KsiazkaAdresowa::wyszukajAdresatowPoNazwisku()
+{
+    adresatMenager->wyszukajAdresatowPoNazwisku();
 }
 
 bool KsiazkaAdresowa::czyUzytkownikJestZalogowany()
