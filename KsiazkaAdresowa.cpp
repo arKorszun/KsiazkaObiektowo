@@ -68,6 +68,11 @@ void KsiazkaAdresowa::wyszukajAdresatowPoNazwisku()
     adresatMenager->wyszukajAdresatowPoNazwisku();
 }
 
+void KsiazkaAdresowa::usunAdresata()
+{
+    adresatMenager->usunAdresata();
+}
+
 bool KsiazkaAdresowa::czyUzytkownikJestZalogowany()
 {
     return uzytkownikMenager.czyUzytkownikJestZalogowany();
