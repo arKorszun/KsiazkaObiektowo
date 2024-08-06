@@ -4,8 +4,8 @@
 #include <vector>
 #include <fstream>
 #include <cstdlib>
+#include <cstdio>
 #include "Adresat.h"
-//#include "AdresatMenager.h"
 #include "MetodyPomocnicze.h"
 
 using namespace std;
@@ -31,9 +31,7 @@ public:
     vector <Adresat> wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
     int pobierzIdOstatniegoAdresata();
     bool dopiszAdresataDoPliku(Adresat adresat);
-
-
-
+    void usunWybranegoAdresataZPliku(int idAdresata);
 
 
 };

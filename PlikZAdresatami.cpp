@@ -151,3 +151,41 @@ bool PlikZAdresatami::czyPlikJestPusty(fstream &plikTekstowy)
     else
         return false;
 }
+
+void PlikZAdresatami::usunWybranegoAdresataZPliku(int idAdresata)
+{
+    string nazwaTymczasowegoPlikuZAdresatami = "Adresaci_tymczasowo.txt";
+    int numerWczytanejLinii = 1;
+    string wczytanaLinia = "";
+    fstream odczytywanyPlikTekstowy, tymczasowyPlikTekstowy;
+
+    odczytywanyPlikTekstowy.open(NAZWA_PLIKU_Z_ADRESATAMI.c_str(), ios::in);
+    tymczasowyPlikTekstowy.open(nazwaTymczasowegoPlikuZAdresatami.c_str(), ios::out | ios::app);
+
+    if (odczytywanyPlikTekstowy.good() == true && idAdresata != 0)
+    {
+        while(getline(odczytywanyPlikTekstowy, wczytanaLinia))
+        {
+
+            if(idAdresata == pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(wczytanaLinia)) {}
+            else
+            {
+                if(numerWczytanejLinii == 1)
+                {
+                    tymczasowyPlikTekstowy << wczytanaLinia;
+                    numerWczytanejLinii++;
+                }
+                else
+                {
+                    tymczasowyPlikTekstowy << endl << wczytanaLinia;
+                    numerWczytanejLinii++;
+                }
+            }
+        }
+    }
+    odczytywanyPlikTekstowy.close();
+    tymczasowyPlikTekstowy.close();
+
+    remove(NAZWA_PLIKU_Z_ADRESATAMI.c_str());
+    rename(nazwaTymczasowegoPlikuZAdresatami.c_str(), NAZWA_PLIKU_Z_ADRESATAMI.c_str());
+}
